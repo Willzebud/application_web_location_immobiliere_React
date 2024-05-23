@@ -1,0 +1,30 @@
+.cards {
+    width: 1240px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+  }
+  
+  .card {
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  
+    &__image {
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    &__title {
+      bottom: 10px;
+      left: 10px;
+      font-size: 1.2rem;
+    }
+  }
+  
