@@ -7,7 +7,7 @@ import logementsData from '../../Data/logements.json';
 function Home() {
   return (
     <div className="home">
-      <Banner image="/Banner.png" title="Chez vous, partout et ailleurs" />
+      <Banner image="/Banner.png" title="Chez vous, partout et ailleurs" overlayOpacity={0.6} />
       <div className="cards">
         {logementsData.slice(0, 6).map((logement) => (
           <Card key={logement.id} title={logement.title} image={logement.cover} />
