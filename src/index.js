@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Router } from 'react-router-dom';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import AppRouter from './components/Router/AppRouter'
-import './css/style.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Layout/Header'; 
+import Footer from './components/Layout/Footer'; 
+import AppRouter from './components/Router/AppRouter';
+import './styles/main.scss'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <>
   <Router>
     <Header />
-    <AppRouter/>
-    <Footer/>
-    </Router>
-  </>
-)
+    <AppRouter />
+    <Footer />
+  </Router>
+);
+
 
 
 
