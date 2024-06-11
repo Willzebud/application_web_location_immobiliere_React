@@ -9,7 +9,7 @@ function Home() {
     <div className="home">
       <Banner image="/Banner.png" title="Chez vous, partout et ailleurs" overlayOpacity={0.6} />
       <div className="cards">
-        {logementsData.slice(0, 6).map((logement) => (
+      {logementsData.map((logement) => (
           <Card key={logement.id} title={logement.title} image={logement.cover} />
         ))}
       </div>
