@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Card({ title, image }) {
+function Card({ title, image, onClick }) {
   return (
-    <div className='card'>
+    <div className='card' onClick={onClick}>
       <img src={image} alt={title} className='card__image' />
       <h3 className='card__title'>{title}</h3>
     </div>
@@ -10,3 +10,5 @@ function Card({ title, image }) {
 }
 
 export default Card;
+
+

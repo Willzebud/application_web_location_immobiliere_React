@@ -1,0 +1,51 @@
+@import "../Utils/variable";
+
+.image-slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  &__container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .slide {
+    width: 1240px;
+    height: 415px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-secondary;
+    height: 80px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+
+  .right-arrow {
+    right: 10px;
+  }
+}
+
+  
