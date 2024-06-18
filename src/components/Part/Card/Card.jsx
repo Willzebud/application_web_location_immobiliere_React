@@ -1,14 +1,25 @@
 import React from 'react';
+import LogementData from '../../../Data/logements.json';
+import { Link } from 'react-router-dom'
 
-function Card({ title, image, onClick }) {
+function Card() {
   return (
-    <div className='card' onClick={onClick}>
-      <img src={image} alt={title} className='card__image' />
-      <h3 className='card__title'>{title}</h3>
-    </div>
+    <div className="galleryImage">
+    {LogementData.map((l) => (
+      <Link key={l.id} to={`/logement/${l.id}`}>
+        <div
+          className="boxKey"
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url(${l.cover})`,
+          }}
+        >
+          <p className="boxTitre">{l.title}</p>
+        </div>
+      </Link>
+    ))}
+  </div>
   );
 }
 
 export default Card;
-
 

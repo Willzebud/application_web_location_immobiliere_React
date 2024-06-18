@@ -5,43 +5,15 @@ import ImageSlider from '../Part/ImageSlider/ImageSlider';
 import logementsData from '../../Data/logements.json';
 
 function Home() {
-  const [selectedLogement, setSelectedLogement] = useState(null);
-
-  const handleCardClick = (index) => {
-    setSelectedLogement({ ...logementsData[index], initialIndex: index });
-  };
-
   return (
-    <div className="home">
-      {!selectedLogement && (
-        <Banner image="/Banner.png" title="Chez vous, partout et ailleurs" overlayOpacity={0.6} />
-      )}
-      <div className="content">
-        {!selectedLogement ? (
-          <div className="cards">
-            {logementsData.map((logement, index) => (
-              <Card
-                key={logement.id}
-                title={logement.title}
-                image={logement.cover}
-                onClick={() => handleCardClick(index)}
-              />
-            ))}
-          </div>
-        ) : (
-          <ImageSlider
-            slides={logementsData.map(logement => ({
-              url: logement.cover,
-              title: logement.title,
-            }))}
-            initialIndex={selectedLogement.initialIndex}
-          />
-        )}
-      </div>
+    <div className="container_picture_header_cart">
+    <div className="picture_and_text">
+      <Banner image="/Banner.png" overlayOpacity={0.3} />
+      <p className="text_on_picture">Chez vous, partout et ailleurs</p>
     </div>
+    <Card />
+  </div>
   );
 }
 
 export default Home;
-
-

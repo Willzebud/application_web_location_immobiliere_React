@@ -3,28 +3,54 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../../../styles/Components/_imageSlider.scss';
 
-const ImageSlider = ({ slides, initialIndex }) => {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+const ImageSlider = ({ slides }) => {
+  const [current, setCurrent] = useState(0) //je définie l'index du premier slide à 0
+  const length = slides.length // longueur du tableau de slides
 
-  const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1) // on repart au premier slide quand on arrive au dernier
+  }
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1) // on repart au dernier slide quand on est au premier
+  }
 
   return (
-    <div className="image-slider">
-      <div className="image-slider__container">
-        <FontAwesomeIcon icon={faChevronLeft} className="left-arrow" onClick={goToPrevious} />
-        <div className="slide" style={{ backgroundImage: `url(${slides[currentIndex].url})` }} />
-        <FontAwesomeIcon icon={faChevronRight} className="right-arrow" onClick={goToNext} />
-      </div>
+    <div id="carrousel-container">
+      {length > 1 && (
+        <img
+          src={faChevronLeft} //Affichage des flèches seulement si length > 1
+          alt="gauche"
+          onClick={prevSlide}
+          className="leftArrow"
+        />
+      )}
+      {length > 1 && (
+        <img
+          src={faChevronRight}
+          alt="droite"
+          onClick={nextSlide}
+          className="rightArrow"
+        />
+      )}
+      {slides.map((slide, index) => (
+        <div
+          key={index} // mise en place du slider avec affichage conditionnel et opacity=1 quand le slide en cours vaut l'index
+          className={
+            current === index
+              ? 'slider bl-msk wh-msk active-anim'
+              : 'slider bl-msk wh-msk'
+          }
+        >
+          {index === current && <img src={slide} alt="appartement à louer" />}
+          {index === current && (
+            <div className="slider__number">
+              <p>
+                {current + 1}/{length}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };
