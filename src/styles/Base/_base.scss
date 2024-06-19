@@ -6,3 +6,13 @@ body {
   padding: 0;
   background-color: $color-secondary;
 }
+
+h2 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  color: $color-tertiary;
+}
+
+.title-container {
+  width: 1240px;
+}

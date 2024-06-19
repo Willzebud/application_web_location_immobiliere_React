@@ -1,0 +1,15 @@
+@import "../Utils/variable";
+
+.rating {
+  display: flex;
+  gap: 5px; // Espace entre les étoiles
+
+  .star {
+    font-size: 2rem;
+    color: grey; // Couleur des étoiles non remplies
+
+    &.filled {
+      color: $color-tertiary; // Couleur des étoiles remplies
+    }
+  }
+}

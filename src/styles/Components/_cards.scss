@@ -1,6 +1,6 @@
 @import "../Utils/variable";
 
-.cards {
+.galleryImage {
     width: 1240px;
     max-height: 829px;
     margin: 20px auto;
@@ -15,25 +15,20 @@
     overflow-y: auto;
   }
   
-  .card {
+  .boxKey {
     width: 340px;
     height: 340px;
     border-radius: 10px;
     position: relative;
-  
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-  
-    &__title {
-      bottom: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .boxTitre {
+    bottom: 10px;
       left: 10px;
       position: absolute;
       color: white;
       font-family: Montserrat;
-    }
   }
   
