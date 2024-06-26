@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Banner from '../Part/Banner/Banner';
 import Card from '../Part/Card/Card';
 

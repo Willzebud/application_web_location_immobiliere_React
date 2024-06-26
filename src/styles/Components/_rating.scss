@@ -2,14 +2,25 @@
 
 .rating {
   display: flex;
-  gap: 5px; // Espace entre les étoiles
+  margin: 10% 0;
+  justify-content: flex-end; 
 
   .star {
     font-size: 2rem;
-    color: grey; // Couleur des étoiles non remplies
+    color: $color-quinary; 
 
     &.filled {
-      color: $color-tertiary; // Couleur des étoiles remplies
+      color: $color-tertiary; 
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rating {
+      margin: 3% 0;
+      .star{
+          max-width: 24px;
+          max-height: 24px;
+      }
   }
 }

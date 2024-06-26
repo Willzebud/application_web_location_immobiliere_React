@@ -2,17 +2,31 @@
 
 .tag-container {
   display: flex;
-  gap: 10px;
+    align-items: center;
+    width: 50%;
+    height: 25px;
+    margin: 3% 0;
+    .tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-secondary;
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        font-size: 14px;
+        background-color: $color-tertiary;
+        border-radius: 15px;
+        font-weight: 700;
+    }
 }
 
-.tag {
-  background-color: $color-tertiary;
-  color: white;
-  padding: 5px 10px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  text-align: center;
+@media screen and (max-width: 768px) {
+  .tag-container {
+      height: 18px;
+      width: 100%;
+      .Tag {
+          font-size: 10px;
+      }
+  }
 }

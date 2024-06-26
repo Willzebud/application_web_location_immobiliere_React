@@ -1,0 +1,71 @@
+.LogementBox {
+    display: flex;
+    justify-content: space-between;
+    
+    .LogementInfo {
+        width: 80%;
+        
+        .title {
+          font-size: 36px;  
+          font-weight: 500;
+          color: $color-tertiary;
+          margin: 15px 0 0 0;
+        }
+        
+        .LogementLocation {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 5px 0 0 0;
+      }
+    }
+    
+    .BoxHost {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        
+        .InfoHost {
+            display: flex;
+            justify-content: flex-end;
+            gap: 5%;
+            height: 50%;
+        }
+    }
+  }
+  
+  .BoxHeadband {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 2%;
+    align-items: flex-start;
+  }
+  
+  @media screen and (max-width: 768px) { 
+    .LogementBox {
+        display: flex;
+        flex-direction: column;
+        
+        .LogementInfo {
+            width: 100%;
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .LogementLocation {
+                font-size: 14px;
+            }
+        }
+        
+        .BoxHost {
+            width: 100%;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    
+    .BoxHeadband {
+        flex-direction: column;
+    }
+  }
