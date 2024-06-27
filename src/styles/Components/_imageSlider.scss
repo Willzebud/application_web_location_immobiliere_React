@@ -50,4 +50,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .image-slider {
+    height: 260px;
+  }
+  
+  .slider__number {
+    display: none;
+  }
+}
   

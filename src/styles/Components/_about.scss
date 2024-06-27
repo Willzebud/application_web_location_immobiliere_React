@@ -10,4 +10,10 @@
 .headband-box {
   padding: 0 50px;
 }
+
+@media screen and (max-width: 768px) {
+  .headband-box {
+      padding: 0;
+  }
+}
   
