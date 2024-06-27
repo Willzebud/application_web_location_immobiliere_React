@@ -1,15 +1,17 @@
 @import "../Utils/variable";
 
 .header {
-  width: 100%;
+  width: 98%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin: 2% 0;
+  padding: 20px;
 
   &__nav {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 40px;
 
     &__link {
       text-decoration: none;
@@ -34,13 +36,13 @@
         font-size: 12px;
         font-weight: 500;
         padding: 0;
-        width: 50%;
+        width: 60%;
         display: flex;
         justify-content: flex-end;
         gap: 0px;
   
       &__link {
-        width: 100%;
+        margin-left: 20px;
         
   
         &.active {

@@ -5,32 +5,23 @@ import HostProfil from "../Part/HostProfil/HostProfil";
 import Rating from "../Part/Rating/Rating";
 import Headband from "../Part/Headband/Headband";
 import logementsData from "../../Data/logements.json";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 
 function Logement() {
-  const [logement, setLogement] = useState({
-    title: "",
-    tags: [],
-    equipments: [],
-    pictures: [],
-    rating: "",
-    description: "",
-    host: { name: "", picture: "" },
-  });
-
+  const [logement, setLogement] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    logementsData.map((house) => {
-      if (house.id === id) {
-        setLogement(house);
-        console.log(house);
-      }
-      return null;
-    });
-  }, [id]);
+    const foundLogement = logementsData.find((house) => house.id === id);
+    if (foundLogement) {
+      setLogement(foundLogement);
+    } else {
+      navigate("/404");
+    }
+  }, [id, navigate]);
 
-  console.log(logement);
+  if (!logement) return null;
 
   return (
     <div>
@@ -48,7 +39,7 @@ function Logement() {
             <HostProfil name={logement.host.name} picture={logement.host.picture} />
           </div>
           <Rating rating={logement.rating} />
-        </div> 
+        </div>
       </div>
       <div className="BoxHeadband">
         <Headband title={"Description"} content={logement.description} />
@@ -68,3 +59,4 @@ function Logement() {
 }
 
 export default Logement;
+

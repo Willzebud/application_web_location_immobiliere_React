@@ -22,6 +22,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
+    margin: 0 20px;
   }
 
   .boxTitre {
@@ -38,12 +39,19 @@
       margin: 2% 0;
       background-color: $color-secondary;
       padding: 10px 0;
+      max-height: fit-content;
     }
   
     .Appartement {
       .Cover_Appartement {
         max-height: 250px;
       }
+    }
+
+    .boxKey {
+      width: 315px;
+      height: 255px;
+      margin: 0;
     }
   }
   

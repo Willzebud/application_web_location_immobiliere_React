@@ -26,4 +26,18 @@
       width: 50%;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .host-profil {
+  
+      &__picture {
+        max-width: 50px;
+        max-height: 50px;
+      }
+  
+      &__name {
+        font-size: 12px;
+      }
+    }
+  }
   

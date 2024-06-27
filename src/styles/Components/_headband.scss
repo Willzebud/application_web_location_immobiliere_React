@@ -1,5 +1,27 @@
 @import "../Utils/variable";
 
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutToTop {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
 .headband {
   position: relative;
   margin: 30px auto;
@@ -21,15 +43,39 @@
     color: $color-secondary;
   }
 
-  &__icon {
+  &__button {
     margin-right: 15px;
+    background-color: transparent;
     color: $color-secondary;
     font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+
+    .notflipped {
+      transform: rotate(0deg);
+      transition: transform 0.5s ease;
+    }
+
+    .flipped {
+      transform: rotate(180deg);
+      transition: transform 0.5s ease;
+    }
   }
 
   &__content {
     padding: 15px;
     background-color: $color-quaternary;
+    overflow: hidden;
+
+    &.show {
+      animation: fadeInFromTop 0.5s ease forwards;
+      display: block;
+    }
+
+    &.hide {
+      animation: fadeOutToTop 0.5s ease forwards;
+      display: none;
+    }
   }
 }
 
@@ -47,3 +93,7 @@
     }
   }
 }
+
+
+
+
