@@ -1,3 +1,5 @@
+@import "../Utils/variable";
+
 .header {
   width: 100%;
   display: flex;
@@ -11,7 +13,7 @@
 
     &__link {
       text-decoration: none;
-      color: black;
+      color: $color-primary;
       
 
       &.active {

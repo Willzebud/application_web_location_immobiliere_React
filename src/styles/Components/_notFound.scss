@@ -1,3 +1,5 @@
+@import "../Utils/variable";
+
 .Box_Erreur {
     display: flex;
     flex-direction: column;
@@ -6,19 +8,19 @@
     .Titre_Erreur {
         font-size: 288px;
         font-weight: 700;
-        color: #FF6060;
+        color: $color-tertiary;
         margin: 15px;
     }
     .Text_Erreur {
         font-size: 36px;
         font-weight: 500;
-        color: #FF6060;
+        color: $color-tertiary;
         margin: 50px;
         
     }
     .Link_Erreur {
         font-size: 18px;
-        color: black;
+        color: $color-primary;
         margin: 50px;
     }
 }
