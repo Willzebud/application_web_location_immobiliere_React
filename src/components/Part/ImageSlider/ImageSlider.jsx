@@ -4,14 +4,14 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import '../../../styles/Components/_imageSlider.scss';
 
 const ImageSlider = ({ slides }) => {
-  const [current, setCurrent] = useState(0); //je définie l'index du premier slide à 0
-  const length = slides.length; // longueur du tableau de slides
+  const [current, setCurrent] = useState(0); 
+  const length = slides.length; 
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1); // on repart au premier slide quand on arrive au dernier
+    setCurrent(current === length - 1 ? 0 : current + 1); 
   };
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1); // on repart au dernier slide quand on est au premier
+    setCurrent(current === 0 ? length - 1 : current - 1); 
   };
 
   return (
